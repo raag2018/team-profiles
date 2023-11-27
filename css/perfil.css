@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Inika&family=Open+Sans:wght@400;600&family=Permanent+Marker&family=Poppins:wght@100;300;400;500;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: url("https://res.cloudinary.com/dyhftwfrw/image/upload/v1701100703/team-profile/gq5nkahjaegwvzkfnuzb.svg");
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Open Sans', sans-serif, Arial, Helvetica;
+}
+
+a {
+    text-decoration: none;
+}
+
+.contenedor {
+    width: 90%;
+    max-width: 700px;
+    margin: auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.tarjeta {
+    background: #fff;
+    margin: 40px;
+    border-radius: 5px;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/*slider banner*/
+.slider_banner {
+    overflow: hidden;
+    z-index: 1;
+    position: relative;
+}
+
+.slider_banner .banner {
+    position: relative;
+    width: 100%;
+}
+
+.slider_banner .banner img {
+    vertical-align: top;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 100%;
+}
