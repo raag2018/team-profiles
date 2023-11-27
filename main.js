@@ -5,12 +5,12 @@ import { initializeApp } from 'firebase/app';
 import sweetAlert from 'sweet-alert';
 import { getFirestore, collection, getDocs, addDoc } from 'firebase/firestore/lite';
 const firebaseConfig = {
-  apiKey: "AIzaSyA7UJ3WpXgTTByMdgaE6y2EF9UlgWPMoC8",
-  authDomain: "profiles-3b5b7.firebaseapp.com",
-  projectId: "profiles-3b5b7",
-  storageBucket: "profiles-3b5b7.appspot.com",
-  messagingSenderId: "717350139105",
-  appId: "1:717350139105:web:9907cc2294f716fb8c73a0"
+  apiKey: import.meta.env.VITE_APIKEY,
+  authDomain: import.meta.env.VITE_AUTHDOMAIN,
+  projectId: import.meta.env.VITE_PROJECTID,
+  storageBucket: import.meta.env.VITE_STORAGEBUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSAGINGSENDERID,
+  appId: import.meta.env.VITE_APPID
 };
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
