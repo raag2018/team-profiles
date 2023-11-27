@@ -1,5 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'font-awesome/css/font-awesome.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.js';
 import { initializeApp } from 'firebase/app';
 import sweetAlert from 'sweet-alert';
 import { getFirestore, collection, getDocs, addDoc } from 'firebase/firestore/lite';
@@ -43,16 +44,6 @@ const btnGuardar = () => {
 }
 document.querySelector('#app').innerHTML = `
 <div class="container mt-2">
-<div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Nombre</label>
-    <input type="text" class="form-control" id="nombre" aria-describedby="emailHelp">
-    <div id="emailHelp" class="form-text">Nombre completo</div>
+
 </div>
-<div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Numero de telefono</label>
-    <input type="number" class="form-control" id="telefono">
-</div>
-<button  class="btn btn-primary" id="btnGuardar">Guardar</button>
-</div>
-`
-document.querySelector("#btnGuardar").addEventListener("click", btnGuardar);
+`;
