@@ -2,20 +2,35 @@
 import { initializeApp } from 'firebase/app';
 import { getFirestore, collection, getDocs, addDoc } from 'firebase/firestore/lite';
 const firebaseConfig = {
-    apiKey: import.meta.env.VITE_APIKEY,
-    authDomain: import.meta.env.VITE_AUTHDOMAIN,
-    projectId: import.meta.env.VITE_PROJECTID,
-    storageBucket: import.meta.env.VITE_STORAGEBUCKET,
-    messagingSenderId: import.meta.env.VITE_MESSAGINGSENDERID,
-    appId: import.meta.env.VITE_APPID
+    apiKey: "AIzaSyCPgwUbP0CEFFsvhwwAiEb6DPYWbTWd3tE",
+    authDomain: "team-profile-bb57f.firebaseapp.com",
+    projectId: "team-profile-bb57f",
+    storageBucket: "team-profile-bb57f.appspot.com",
+    messagingSenderId: "263789061532",
+    appId: "1:263789061532:web:baecfd835539e4192c9459"
   };
   const app = initializeApp(firebaseConfig);
   const db = getFirestore(app);
-  const agregarProfile = async(db, nombre, telefono) => {
+  
+// Get a list of cities from your database
+async function getProfile(db) {
+    const profiles = collection(db, 'perfil');
+    const listProfiles = await getDocs(profiles);
+    const profile = listProfiles.docs.map(doc => doc.data());
+    console.log(profile);
+    return profile;
+  }
+  
+  const agregarProfile = async(db, nombre, telefono, correo, github, linkedin, profilepic, profileproject) => {
     try {
-      const docRef = await addDoc(collection(db, "profile"), {
+      const docRef = await addDoc(collection(db, "perfil"), {
         nombre: nombre,
         telefono: telefono,
+        corroe: correo,
+        github: github,
+        linkedin: linkedin,
+        profilepic: profilepic,
+        profileproject: profileproject,
       });
       console.log("se agrego correctamente: ");
       getProfile(db);
@@ -103,7 +118,7 @@ const agregar = () => {
         let linkedin = document.querySelector("#linkedin").value;
         let profilepic = document.querySelector("#profilepic").value;
         let profileproject = document.querySelector("#profileproject").value;
-        agregarProfile(db, correo, github, linkedin, nombre, profilepic, profileproject, telefono);
+        agregarProfile(db, nombre, telefono, correo, github, linkedin, profilepic, profileproject);
         getProfile(db);
         formulario.reset();
         document.getElementById("formulario__mensaje-exito").classList.add("formulario__mensaje-exito-activo");
