@@ -1,6 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'font-awesome/css/font-awesome.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.js';
+import '.\\main.css';
 import { initializeApp } from 'firebase/app';
 import sweetAlert from 'sweet-alert';
 import { getFirestore, collection, getDocs, addDoc } from 'firebase/firestore/lite';
