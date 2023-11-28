@@ -138,9 +138,9 @@ const agregar = () => {
         document.querySelectorAll(".formulario__grupo-correcto").forEach((icono) => {
             icono.classList.remove("formulario__grupo-correcto");
         });
-
+        document.getElementById("formulario__mensaje").classList.remove("formulario__mensaje-exito-activo");
     }else{
-        document.getElementById("formulario__mensaje-exito").classList.add("formulario__mensaje-exito-activo");
+        document.getElementById("formulario__mensaje").classList.add("formulario__mensaje-exito-activo");
     }
 }
 formulario.addEventListener("submit", (e) => {
