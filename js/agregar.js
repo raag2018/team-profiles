@@ -1,4 +1,4 @@
-
+import Swal from 'sweetalert2';
 import { initializeApp } from 'firebase/app';
 import { getFirestore, collection, getDocs, addDoc } from 'firebase/firestore/lite';
 const firebaseConfig = {
@@ -17,7 +17,6 @@ async function getProfile(db) {
     const profiles = collection(db, 'perfil');
     const listProfiles = await getDocs(profiles);
     const profile = listProfiles.docs.map(doc => doc.data());
-    console.log(profile);
     return profile;
   }
   
@@ -32,10 +31,21 @@ async function getProfile(db) {
         profilepic: profilepic,
         profileproject: profileproject,
       });
-      console.log("se agrego correctamente: ");
-      getProfile(db);
+      Swal.fire({
+        position: "top-end",
+        icon: "success",
+        title: "Se agrego exitosamente",
+        showConfirmButton: false,
+        timer: 1500
+      });
     } catch (e) {
-      console.error("Error adding document: ", e);
+        Swal.fire({
+            position: "top-end",
+            icon: "warning",
+            title: "Error al guardar, verificar el formulario",
+            showConfirmButton: false,
+            timer: 1500
+          });
     }
   }
 const formulario = document.getElementById("formulario");
@@ -135,7 +145,5 @@ const agregar = () => {
 }
 formulario.addEventListener("submit", (e) => {
     e.preventDefault();
-    console.log("ok");
     agregar();
 });
-//document.querySelector("#formulario__btn").addEventListener("click", agregar);
