@@ -91,7 +91,7 @@ document.querySelector('#app').innerHTML = `
 
     <!--Boton de envio-->
     <div class="formulario__grupo formulario__grupo-btn-enviar">
-      <button class="formulario__btn" id="formulario__btn">Enviar</button>
+      <button class="formulario__btn" id="formulario__btn">Guardar</button>
       <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
     </div>
   </form>
