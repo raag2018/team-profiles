@@ -11,15 +11,17 @@ const firebaseConfig = {
   };
   const app = initializeApp(firebaseConfig);
   const db = getFirestore(app);
-  
+  let perfiles = [];
 // Get a list of cities from your database
 async function getProfile(db) {
     const profiles = collection(db, 'perfil');
     const listProfiles = await getDocs(profiles);
-    const profile = listProfiles.docs.map(doc => doc.data());
+   listProfiles.docs.map(doc =>  perfiles.push(doc.data()));
+    const profile =  listProfiles.docs.map(doc => doc.data());
     return profile;
   }
-  
+getProfile(db);
+console.log(perfiles);
   const agregarProfile = async(db, nombre, telefono, correo, github, linkedin, profilepic, profileproject) => {
     try {
       const docRef = await addDoc(collection(db, "perfil"), {
