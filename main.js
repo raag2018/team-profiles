@@ -7,7 +7,7 @@ document.querySelector('#app').innerHTML = `
 
 <!--Inicio seccion formulario-->
 <div class="container">
-  <h1 class="text-center fw-bold">Registro de perfil profeional</h1>
+  <h1 class="text-center fw-bold">Registro de perfil profesional</h1>
   <form class="formulario" id="formulario">
     <!-- Grupo nombre -->
     <div class="formulario__grupo" id="grupo__nombre">
@@ -75,13 +75,19 @@ document.querySelector('#app').innerHTML = `
 
     <!-- Grupo FotoProyecto -->
     <div class="formulario__grupo" id="grupo__profileproject">
-      <label for="profileproject" class="formulario__label">Seleccione su foto de perfil:</label>
+      <label for="profileproject" class="formulario__label">Seleccione su foto de proyecto:</label>
       <div class="formulario__grupo-input">
         <input type="url" class="formulario__input" name="profileproject" id="profileproject"
           placeholder="www.imagen.com">
         <i class="formulario__validacion-estado fa-solid fa-circle-xmark" style="color: #f01919;"></i>
         <p class="formulario__input-error">Solo se aceptan url.</p>
       </div>
+    </div>
+
+    <!-- Grupo Descripcion -->
+    <div class="formulario__grupo" id="grupo__Descripcion">
+      <label for="Descripcion" class="formulario__label">Profesión y experiencia:</label>
+      <textarea id="mensaje" name="mensaje" placeholder="Cuéntanos... (máximo 150 caracteres)" maxlength="150" rows="2" cols="70"></textarea>
     </div>
 
     <div class="formulario__mensaje" id="formulario__mensaje">
