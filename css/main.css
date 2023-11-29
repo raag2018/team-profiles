@@ -156,10 +156,24 @@ main {
 
 textarea {
     width: 100%;
-    padding: 8px;
-    box-sizing: border-box;
-    margin-bottom: 16px;
-    resize: vertical; /* Permite la redimensión vertical del textarea */
+    background: #223683;
+    color: #fff;
+    border: 3px solid transparent;
+    border-radius: 3px;
+    height: 75px;
+    line-height: 20px;
+    padding: 0 40px 0 10px;
+    transition: .3s ease all;
+}
+textarea::placeholder {
+    color: #fff;
+}
+textarea:focus{
+    background: #223683;
+    color: #fff;
+    border: 3px solid #0075ff;
+    outline: none;
+    box-shadow: 3px 0px 30px rgba(163, 163, 163, 0.4);
 }
 
 /* mediaqueries */

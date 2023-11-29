@@ -87,7 +87,7 @@ document.querySelector('#app').innerHTML = `
     <!-- Grupo Descripcion -->
     <div class="formulario__grupo" id="grupo__Descripcion">
       <label for="Descripcion" class="formulario__label">Profesión y experiencia:</label>
-      <textarea id="mensaje" name="mensaje" placeholder="Cuéntanos... (máximo 150 caracteres)" maxlength="150" rows="2" cols="70"></textarea>
+      <textarea id="mensaje" name="mensaje" placeholder="Cuéntanos... (máximo 200 caracteres)" maxlength="200" rows="2" cols="70"></textarea>
     </div>
 
     <div class="formulario__mensaje" id="formulario__mensaje">
