@@ -2,6 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'font-awesome/css/font-awesome.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.js';
 import '..\\css\\perfil.css';
+import '..\\css\\perfiles.css';
 import Swal from 'sweetalert2';
 import { initializeApp } from 'firebase/app';
 import { getFirestore, collection, getDocs, addDoc } from 'firebase/firestore/lite';
@@ -17,7 +18,7 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 let card = `<main>
-<div class="contenedor">`;
+<div class="contenedor  overflow-hidden">`;
 // Get a list of cities from your database
 const getProfile = async (db) => {
   const profiles = collection(db, 'perfil');
@@ -27,10 +28,10 @@ const getProfile = async (db) => {
 }
 getProfile(db).then((resultado) => {
   resultado.map((perfil) => {
-    card += `<div class="card" style="width: 18rem;">
-              <img src="${perfil.profilepic}" class="card-img-top" alt="..." >
+    card += `<div class="contenedor-2 col row m-2 card text-bg-secondary mb- border-info mb-3" style="">
+              <img src=" https://res.cloudinary.com/dvghu0k44/image/upload/v1701338408/flowers-silhouette-pehrd_qtdzao.jpg" class="card-img-top" alt="..." >
               <div class="card-body">
-                <h5 class="card-title">Card title</h5>
+                <h5 class="card-title">iformacion</h5>
                 <p class="card-text">${perfil.nombre}</p>
                 <a href="#" class="btn btn-primary">Go somewhere</a>
               </div>
@@ -45,3 +46,6 @@ getProfile(db).then((resultado) => {
   console.error("Error al obtener datos:", error);
 });
 
+
+// esto va en la linea 32 solo la baje para ver como quedaria con imagen
+// ${perfil.profilepic}
