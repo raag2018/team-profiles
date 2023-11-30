@@ -6,7 +6,7 @@ import '.\\css\\main.css';
 document.querySelector('#app').innerHTML = `
 
 <!--Inicio seccion formulario-->
-<div class="container">
+<div class="container mb-4">
   <h1 class="text-center fw-bold">Registro de perfil profesional</h1>
   <form class="formulario" id="formulario">
     <!-- Grupo nombre -->
