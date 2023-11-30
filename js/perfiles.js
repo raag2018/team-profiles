@@ -28,7 +28,7 @@ const getProfile = async (db) => {
 }
 getProfile(db).then((resultado) => {
   resultado.map((perfil) => {
-    card += `<div class="contenedor-2 col row m-2 card text-bg-secondary mb- border-info mb-3" style="">
+    card += `<div class="contenedor-2 col row m-2 card mb- border-info mb-3" style="">
               <img src=" https://res.cloudinary.com/dvghu0k44/image/upload/v1701338408/flowers-silhouette-pehrd_qtdzao.jpg" class="card-img-top" alt="..." >
               <div class="card-body">
                 <h5 class="card-title">iformacion</h5>
