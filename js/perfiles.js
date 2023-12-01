@@ -42,7 +42,7 @@ getProfile(db).then((resultado) => {
           card += "<div class='col-sm-12 my-2 mb-3'> <label class='text-white mt-4'> Sin registros</label>";
         }
     document.querySelector('#app').innerHTML = `
-    <main class='container m-5'>
+    <main class=' m-5'>
       <div class=" text-cemter justify-content-center">
         <h1 class='text-white text-center'>Perfiles</h1>
         <div class='row'>
