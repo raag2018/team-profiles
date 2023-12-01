@@ -11,7 +11,6 @@ document.querySelector('#nav').innerHTML = `
         <div class="navbar-nav">
         <a class="nav-link active" aria-current="page" href="index.html">Registro</a>
         <a class="nav-link" href="perfiles.html">Perfiles</a>
-        <a class="nav-link" href="perfil.html">Perfil</a>
         </div>
     </div>
     </div>

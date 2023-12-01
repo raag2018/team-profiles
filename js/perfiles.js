@@ -3,7 +3,6 @@ import 'font-awesome/css/font-awesome.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.js';
 import '..\\css\\perfil.css';
 import '..\\css\\perfiles.css';
-import Swal from 'sweetalert2';
 import { initializeApp } from 'firebase/app';
 import { getFirestore, collection, getDocs, addDoc } from 'firebase/firestore/lite';
 const firebaseConfig = {
@@ -17,9 +16,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-let card = `<main>
-<div class="contenedor  overflow-hidden text-cemter justify-content-center">
-<div class='row'>`;
+let card = ``;
 // Get a list of cities from your database
 const getProfile = async(db) => {
     const profiles = collection(db, 'perfil');
@@ -28,25 +25,32 @@ const getProfile = async(db) => {
     return profile;
 }
 getProfile(db).then((resultado) => {
-    resultado.map((perfil) => {
-        console.log(perfil);
-        card += `<div class='col-sm-3 my-2 mb-3'> 
-            <div class="contenedor-2 card mb- border-info " >
-              <img src="${perfil.profilepic}" class="card-img-top" alt="imagen de perfil" >
-              <div class="card-body text-white">
-                <h5 class="card-title">Información</h5>
-                  <p class="card-text">${perfil.nombre.toUpperCase()}</p>
-                <a href="perfil.html?p=${perfil.correo}" class="btn btn-primary">Ver Perfil</a>
-              </div>
-            </div>
-        </div>`;
-    })
+    if(resultado.length > 0){
+          resultado.map((perfil) => {
+              card += `<div class='col-sm-6 col-lg-4 my-2 mb-3'> 
+                  <div class="contenedor-2 card mb- border-info " >
+                    <img src="${perfil.profilepic}" class="card-img-top" alt="imagen de perfil" >
+                    <div class="card-body text-white">
+                      <h5 class="card-title">Información</h5>
+                        <p class="card-text">${perfil.nombre.toUpperCase()}</p>
+                      <a href="perfil.html?p=${perfil.correo}" class="btn btn-primary">Ver Perfil</a>
+                    </div>
+                  </div>
+              </div>`;
+          })
+        }else{
+          card += "<div class='col-sm-12 my-2 mb-3'> <label class='text-white mt-4'> Sin registros</label>";
+        }
     document.querySelector('#app').innerHTML = `
-     ${card}
-     </div>
-  </div>
-</main>
-`;
+    <main class='container m-5'>
+      <div class=" text-cemter justify-content-center">
+        <h1 class='text-white text-center'>Perfiles</h1>
+        <div class='row'>
+          ${card}
+        </div>
+      </div>
+    </main>
+    `;
 }).catch((error) => {
     console.error("Error al obtener datos:", error);
 });
