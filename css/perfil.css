@@ -25,7 +25,7 @@ a{
 
 .tarjeta{
     background: #fff;
-    margin: 40px 0;
+    margin: 20px 0;
     border-radius: 5px;
     overflow: hidden;
     z-index: 1000;
@@ -49,10 +49,19 @@ a{
     top: 0;
     left: 100%;
 }
-.banner img{
-    width: 100%;
-    height: 300px;
-}
+.banner img {
+    /* Asegúrate de que la imagen es responsive */
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Media query para pantallas de 500px o menos */
+  @media screen and (max-width: 500px) {
+    .banner img {
+      /* Ajusta la altura de la imagen a 200px */
+      height: 200px;
+    }
+  }
 /*clases con js*/
 .img_left{
     left: 0;
