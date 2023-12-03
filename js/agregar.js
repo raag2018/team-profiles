@@ -144,3 +144,19 @@ formulario.addEventListener("submit", (e) => {
     e.preventDefault();
     agregar();
 });
+
+
+//Advertencia de caracteres TEXTAREA
+var textarea = document.getElementById("mensaje");
+var warning = document.getElementById("warning");
+
+//Limite de caracteres
+var characterLimit = 199;
+textarea.addEventListener("input", function() {
+    var currentLength = textarea.value.length;
+    if (currentLength > characterLimit) {
+        warning.style.display = "block";
+    } else {
+        warning.style.display = "none";
+    }
+});
